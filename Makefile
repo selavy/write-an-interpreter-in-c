@@ -2,7 +2,7 @@ CC=gcc
 RELEASE=-O3 -fstrict-aliasing -flto
 DEBUG=-g -O0
 CFLAGS=-Wall -Werror -pedantic $(DEBUG) -std=c11
-OBJS = main.o
+OBJS = lexer.o main.o
 TARGET=interpreter
 
 $(TARGET): $(OBJS)
