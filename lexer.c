@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
+#include <assert.h>
 
 const char *token_to_string(enum TokenType token) {
     switch (token) {
@@ -111,12 +112,7 @@ int lexer_next_token(struct Lexer *lex, struct Token *token) {
             case '}': token->type = RightBrace; break;
             case '(': token->type = LeftParenthesis; break;
             case ')': token->type = RightParenthesis; break;
-            default:
-                      // case '=' or '=='
-                      // case '!' or '!='
-                      // is_letter
-                      // is_numeric
-                      return 1;
+            default: assert(0); return 1;
         }
     }
 
